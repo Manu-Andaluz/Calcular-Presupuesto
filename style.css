@@ -59,9 +59,16 @@ form {
     width: 50%;
     margin: 0 auto;
     padding-top: 4rem;
+    align-items: center;
 }
 
-form input {
+form input,
+select {
+    padding: 10px;
+}
+
+.btn {
+    width: 50%;
     padding: 10px;
 }
 
