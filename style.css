@@ -7,6 +7,14 @@
     margin: 0;
 }
 
+:root {
+    --ingresos-color: rgb(107, 168, 194);
+    --egresos-color: #c62828;
+    --border-color: rgb(235, 235, 235);
+}
+
+/* Presupuesto */
+
 .limpiarEstilos::after {
     content: "";
     display: table;
@@ -17,7 +25,7 @@
     display: grid;
     gap: 2rem;
     color: white;
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
     background-image: url(images/angelo-abear-knTKij60p3g-unsplash.jpg);
 }
@@ -27,7 +35,7 @@
     padding-top: 1rem;
     text-align: left;
     gap: 1rem;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -36,6 +44,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.presupuesto_ingreso {
+    background-color: var(--ingresos-color);
+}
+
+.presupuesto_egreso {
+    background-color: var(--egresos-color);
 }
 
 .ingresos_totales {
@@ -47,32 +64,69 @@
     position: absolute;
     left: 60%;
     margin-left: 1rem;
+    background-color: rgba(218, 218, 218, 0.253);
+    padding: 5px;
+    border-radius: 2px;
 }
 
-/**/
+/* Form */
+.container_form {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+}
 
 form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,
-            minmax(70px, 1fr));
+    display: flex;
     gap: 5px;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
-    padding-top: 4rem;
+    padding-top: 5px;
     align-items: center;
 }
 
 form input,
 select {
-    padding: 10px;
+    padding: 10px 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input[type=number] {
+    width: 40%;
+}
+
+form input[type=text] {
+    padding: 10px 1rem;
+    width: 100%;
+}
+
+.agregar_valo {
+    width: 70%;
 }
 
 .btn {
-    width: 50%;
-    padding: 10px;
+    width: 30%;
+    padding: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: white;
+    background-color: #000136;
+    cursor: pointer;
 }
 
-/**/
+.btn::after {
+    content: ' ';
+}
+
+.btn:hover::after {
+    width: 100%;
+    content: ' +';
+    padding: 0;
+}
+
+/* Datos Ingresos Egresos */
 
 .ingresos_egresos_contenedor {
     display: flex;
@@ -81,16 +135,30 @@ select {
     padding: 3rem 0;
 }
 
+.ingreso h2,
+.egreso h2 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ingreso h2 {
+    color: var(--ingresos-color);
+}
+
+.egreso h2 {
+    color: var(--egresos-color);
+}
+
 .elemento {
-    padding-top: 1rem;
+    padding: 1rem 0;
     display: flex;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .elemento .derecha {
     display: flex;
     margin-left: 1rem;
 }
-
 
 .elemento_porcentaje {
     float: left;
@@ -108,7 +176,47 @@ select {
     margin-left: 1rem;
 }
 
+.elemento i {
+    margin-left: 1rem;
+    cursor: pointer;
+}
 
 .elemento:hover .elemento-btn {
     display: block;
+}
+
+/* Media */
+
+@media (max-width:900px) {
+
+    /* Presupuesto */
+    .contenedor_presupuesto {
+        width: 90%;
+    }
+
+    .presupuesto_ingreso,
+    .presupuesto_egreso {
+        display: grid;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #porcentaje {
+        position: initial;
+        left: 0;
+    }
+
+    /* Form */
+
+    form {
+        width: 100%;
+    }
+
+    /* Datos Ingresos Egresos */
+
+    .egreso {
+        margin-top: 1.5rem;
+    }
 }

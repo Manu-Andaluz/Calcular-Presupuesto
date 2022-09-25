@@ -38,15 +38,17 @@
         </div>
     </div>
 
-    <form id="forma">
-        <select id="tipo">
-            <option value="ingreso" selected>+</option>
-            <option value="egreso">-</option>
-        </select>
-        <input type="text" class="agregar_descripcion" placeholder="Agregar Descripcion" id="descripcion">
-        <input type="number" class="agregar_valor" placeholder="Valor" id="valor">
-        <button class="btn" onclick="agregarDato()">Add</button>
-    </form>
+    <div class="container_form">
+        <form id="forma">
+            <select id="tipo">
+                <option value="ingreso" selected>+</option>
+                <option value="egreso">-</option>
+            </select>
+            <input type="text" placeholder="Agregar Descripcion" id="descripcion">
+            <input type="number" placeholder="Valor" id="valor">
+            <button class="btn" onclick="agregarDato()">Add</button>
+        </form>
+    </div>
 
     <div class="ingresos_egresos_contenedor">
         <div class="ingreso">

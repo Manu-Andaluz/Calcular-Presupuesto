@@ -64,13 +64,14 @@ const cargarIngresos = () => {
 const crearIngresoHTML = (ingreso) => {
     let ingresoHTML = `
     <div class="elemento limpiarEstilos">
-    <div class="elemento_descripcion">${ingreso.descripcion}</div>
+    <p class="elemento_descripcion">${ingreso.descripcion}</p>
     <div class="derecha limpiarEstilos">
-        <div class="elemento_valor">+ ${formatoMoneda(ingreso.valor)}</div>
-            <button class="elemento-btn">
-                <ion-icon name="close-outline"
-                onclick='eliminarIngreso(${ingreso.id})' ></ion-icon>
-            </button>
+        <p class="elemento_valor">+ ${formatoMoneda(ingreso.valor)}</p>
+            <i class="far fa-trash-alt"
+                <button class="elemento-btn"
+                onclick='eliminarIngreso(${ingreso.id})' >
+                </button>
+            </i>
     </div>
 </div>
     `;
@@ -95,14 +96,15 @@ const cargarEgresos = () => {
 const crearEgresosHTML = (egreso) => {
     let egresoHTML = `
     <div class="elemento limpiarEstilos">
-    <div class="elemento_descripcion">${egreso.descripcion}</div>
+    <p class="elemento_descripcion">${egreso.descripcion}</p>
     <div class="derecha limpiarEstilos">
-        <div class="elemento_valor">- ${formatoMoneda(egreso.valor)}</div>
-        <div class="elemento_porcentaje">${formatoPorcentaje(egreso.valor / totalEgresos())}</div>
-            <button class="elemento-btn">
-            <ion-icon name="close-outline"
-            onclick='eliminarEgreso(${egreso.id})' ></ion-icon>
+        <p class="elemento_valor">- ${formatoMoneda(egreso.valor)}</p>
+        <p class="elemento_porcentaje">${formatoPorcentaje(egreso.valor / totalEgresos())}</p>
+            <i class="far fa-trash-alt"
+                <button class="elemento-btn"
+            onclick='eliminarEgreso(${egreso.id})' >
             </button>
+            </i>
     </div>
 </div>
     `;
