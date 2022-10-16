@@ -136,5 +136,7 @@ let agregarDato = () => {
             cargarEgresos();
         }
     }
+    descripcion.value = ''
+    valor.value = ''
 }
 //Form section ends

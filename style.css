@@ -132,7 +132,7 @@ form input[type=text] {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 3rem 0;
+    padding: 2.2rem 0;
 }
 
 .ingreso h2,
